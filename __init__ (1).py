@@ -23,7 +23,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
-from pages.base_page import BasePage
+import pages.base_page
+
+from betting_page import BasePage
 
 
 # ---------------------------------------------------------------------------
