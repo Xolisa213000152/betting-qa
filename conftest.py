@@ -1,5 +1,8 @@
 # # Sports Betting QA – Automation Framework
 # import betting
+# import pytest
+#
+# import tests
 #
 # # End-to-end UI tests (Selenium + Pytest) and API contract tests (requests + Pytest)
 # # for the **Single Bet Placement** feature of the Sports Betting QA application.
@@ -58,7 +61,7 @@
 #
 # # 3. Install dependencies
 # pip install -r requirements.txt
-# ```
+# repr(``)
 #
 # ---
 #
@@ -81,36 +84,36 @@
 # Open `reports/test_report.html` in a browser after any run.
 #
 # ---
+# #
+# # ## Configuration
+# #
+# # Set via environment variables (defaults in `conftest.py`):
+# #
+# # | Variable | Default | Purpose |
+# # |---|---|---|
+# # | `APP_BASE_URL` | `https://qae-assignment-tau.vercel.app` | Application base URL |
+# # | `USER_ID` | `candidate-K9vTb3Hd6Z` | `x-user-id` header value |
+# #
 #
-# ## Configuration
-#
-# Set via environment variables (defaults in `conftest.py`):
-#
-# | Variable | Default | Purpose |
-# |---|---|---|
-# | `APP_BASE_URL` | `https://qae-assignment-tau.vercel.app` | Application base URL |
-# | `USER_ID` | `candidate-K9vTb3Hd6Z` | `x-user-id` header value |
-#
-# ---
 #
 # ## Stack Choices
 #
-# | Tool | Reason |
-# |---|---|
-# | **Pytest** | Powerful fixture scoping, parametrize, markers |
-# | **Selenium 4** | Required; headless Chrome with `--headless=new` |
-# | **webdriver-manager** | Auto-downloads matching ChromeDriver |
-# | **requests** | Lightweight, expressive API testing |
-# | **pytest-html** | Zero-config HTML report |
-# | **Page Object Model** | Locators in one file; tests stay readable |
-# | **Explicit waits only** | `implicitly_wait(0)` prevents hidden race conditions |
+# # | Tool | Reason |
+# # |---|---|
+# # | **Pytest** | Powerful fixture scoping, parametrize, markers |
+# # | **Selenium 4** | Required; headless Chrome with `--headless=new` |
+# # | **webdriver-manager** | Auto-downloads matching ChromeDriver |
+# # | **requests** | Lightweight, expressive API testing |
+# # | **pytest-html** | Zero-config HTML report |
+# # | **Page Object Model** | Locators in one file; tests stay readable |
+# # | **Explicit waits only** | `implicitly_wait(0)` prevents hidden race conditions |
 #
-# ---
+#
 #
 # ## Known Issues
 #
-# | Bug | Impact on tests |
-# |---|---|
-# | **BUG-001** – Min stake EUR 1.00 vs EUR 1.01 spec conflict | Tests assert EUR 1.00 accepted (3 sources agree); adjust if implementation enforces 1.01 |
-# | **BUG-002** – reset-balance response may differ from persisted state | `reset` fixture skips (not fails) if values diverge |
-# | **BUG-003** – Payout floating-point artefacts | Payout assertions use `pytest.approx(abs=0.01)` |
+# # | Bug | Impact on tests |
+# # |---|---|
+# # | **BUG-001** – Min stake EUR 1.00 vs EUR 1.01 spec conflict | Tests assert EUR 1.00 accepted (3 sources agree); adjust if implementation enforces 1.01 |
+# # | **BUG-002** – reset-balance response may differ from persisted state | `reset` fixture skips (not fails) if values diverge |
+# # | **BUG-003** – Payout floating-point artefacts | Payout assertions use `pytest.approx(abs=0.01)` |
